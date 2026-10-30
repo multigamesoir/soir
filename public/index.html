@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knight Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <!-- Chargement -->
+  <div id="loading" class="panel-wrap">
+    <div class="plate small">Chargement du chevalier…</div>
+  </div>
+
+  <!-- Menu principal -->
+  <div id="menu" class="panel-wrap hidden">
+    <div class="plate">
+      <h1>Knight Arena</h1>
+      <p class="sub">Duels de chevaliers jusqu'à 4. Crée un lobby, partage le code, battez-vous.</p>
+
+      <label for="name">Ton nom</label>
+      <input id="name" maxlength="14" autocomplete="off" />
+
+      <button id="btn-create" class="primary">Créer un lobby</button>
+
+      <div class="sep"><span>ou rejoindre</span></div>
+
+      <div class="row">
+        <input id="code" class="code-input" maxlength="4" placeholder="CODE" autocomplete="off" />
+        <button id="btn-join">Rejoindre</button>
+      </div>
+      <p id="menu-err" class="err"></p>
+    </div>
+  </div>
+
+  <!-- Lobby -->
+  <div id="lobby" class="panel-wrap hidden">
+    <div class="plate">
+      <p class="sub">Code du lobby</p>
+      <div id="lobby-code" class="big-code">----</div>
+      <div class="row center">
+        <button id="btn-copy">Copier le lien</button>
+      </div>
+
+      <ul id="players" class="players"></ul>
+
+      <button id="btn-start" class="primary">Lancer le combat</button>
+      <p id="lobby-hint" class="sub"></p>
+      <button id="btn-leave" class="ghost">Quitter le lobby</button>
+      <p id="lobby-err" class="err"></p>
+    </div>
+  </div>
+
+  <!-- Aide en jeu -->
+  <div id="help" class="hidden">
+    <b>ZQSD</b>/<b>WASD</b> bouger · <b>Souris</b> viser · <b>Clic gauche</b>/<b>J</b> attaque rapide ·
+    <b>Clic droit</b>/<b>K</b> attaque lourde · <b>E</b>/<b>L</b> tourbillon · <b>Espace</b> roulade ·
+    <b>Shift</b> bouclier · <b>M</b> son
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

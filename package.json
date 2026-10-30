@@ -1,0 +1,16 @@
+{
+  "name": "knight-arena",
+  "version": "1.0.0",
+  "description": "Mini jeu de combat multijoueur avec codes de lobby (chevalier 2D)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
